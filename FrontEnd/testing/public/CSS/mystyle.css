@@ -1,0 +1,17 @@
+
+  
+  button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    background-color: rgb(35, 44, 108);
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  body {
+    background-color: Canvas;
+    color: rgb(86, 99, 199);
+    color-scheme: light dark;
+    
+  }
