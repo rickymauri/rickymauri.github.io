@@ -5,9 +5,7 @@ const http = require('http');
 const cors = require('cors');
 const {errors} = require('celebrate');
 const {isCelebrateError} = require('celebrate');
-
 const {Errors, EvoliError} = require('./utils/error.utils');
-const routes = require('./routes/routes');
 const sequelize = require('./config/database');
 const logger = require('./config/loggerConfig');
 require('./config/associations');
@@ -19,10 +17,6 @@ const socketServer = require('./sockets/server/SocketServer')(server);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(bodyParser.json());
-
-app.use(routes);
-
-app.use(express.static(path.join(__dirname, '../../FrontEnd/testing/public')));
 
 app.use(errors());
 
@@ -37,6 +31,7 @@ server.listen(8080, async () => {
       console.log('Database connected');
     })
     .catch((err) => {
+      console.log('Unable to connect to the database');
       next(err);
     });
 });

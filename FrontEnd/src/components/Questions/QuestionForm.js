@@ -5,8 +5,7 @@ const QuestionForm = () => {
    
     const {emit, formId, isClosed} = useContext(SocketContext);
     const [enteredText, setEnteredText] = useState('');
-    const [isValid, setIsValid] = useState(true);
-   
+    
     const textChangeHandler = (event) => {
         setEnteredText(event.target.value);
     }
@@ -21,7 +20,6 @@ const QuestionForm = () => {
         }        
         
         if (body.questionText.trim().length === 0) {
-            setIsValid(false);
             return;
         }
 

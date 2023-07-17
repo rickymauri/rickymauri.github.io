@@ -10,28 +10,6 @@ module.exports = (io) => {
     //const socketDataMap = new Map(); // by using this map, we could store data for each socket and avoid useless data exchange between client and server
 
     router.on(
-        "teacher:feedbackResults",
-        celebrateSocket({
-            body:{
-                formId: numberCelebrateSchema
-            },
-        }),
-        async (socket, args, next) => {
-            try {
-                const formId = args[1].body.formId;
-                //socketDataMap.set(socket.id, formId);
-                const feedbacks = await formServices.getFormResults(formId);
-                logger.info(`[SOCKET] Feedbacks retrieved for room ${formId}`);
-                const numberOfConnectedStudents = await SocketUtils.getNumberOfConnectedStudents(formId);
-                socket.emit("teacher:feedbackResultsList", feedbacks, numberOfConnectedStudents);
-            }
-            catch (err) {
-                next(err);
-            }
-        }
-    );
-
-    router.on(
         "teacher:closeForm",
         celebrateSocket({
             body: {

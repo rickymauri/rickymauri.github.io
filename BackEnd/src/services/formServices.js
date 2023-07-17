@@ -65,7 +65,6 @@ class FormService {
                 };
             }
         }
-        results.boolean = true;
         for (let field of fields) {
             results[field] = Object.values(results[field]);
         }

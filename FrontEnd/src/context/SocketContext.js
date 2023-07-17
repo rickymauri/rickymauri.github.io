@@ -14,7 +14,6 @@ const initialState = {
     understandingValue: [],
     complexityValue: [],
     explainationValue: [],
-    boolean:false
   },
   numberOfConnectedStudents: 0,
   questions: [],
@@ -56,49 +55,39 @@ export const SocketProvider = ({children}) => {
 
   const bindListeners = (socket) => {
 
-    socket.on('teacher:feedbackResultsPage', (formId, formCode) => {
+    socket.on('teacher:feedbackResultsPage', (formId, formCode, isClosed) => {
       dispatch({
         type: 'ADD_FORM_ID_AND_CODE',
-        payload: {formId, formCode},
+        payload: {formId, formCode, isClosed},
       });
     });
   
     socket.on('all:questionUpdate', (question) => {
       if(question.numberOfLikes === 0) {
-        console.log('PRIMO IF');
         dispatch({
         type: 'ADD_QUESTION',
         payload: {question}
         }); 
       } 
       else {
-        console.log('ELSE');
         dispatch({
           type: 'QUESTION_UPDATE',
           payload: {question}
         });
       }
     });
-
     
     socket.on('student:submitFeedbackPage', (studentId, formId, isClosed) => {
       dispatch({
         type: 'ADD_STUDENT_ID_AND_FORM_ID',
         payload: {studentId, formId, isClosed},
       })
+      console.log(isClosed);
     })
  
-
-    socket.on('teacher:feedbackResultsList', (feedbacksList, numberOfConnectedStudents) => {
+    socket.on('all:feedbackResults', (feedbacksList, numberOfConnectedStudents) => {
       dispatch({
-        type: 'ADD_TEACHER_FEEDBACKS',
-        payload: {feedbacksList, numberOfConnectedStudents}
-      })
-    })
-
-    socket.on('student:feedbackResultsList', (feedbacksList, numberOfConnectedStudents) => {
-      dispatch({
-        type: 'ADD_STUDENT_FEEDBACKS',
+        type: 'ADD_FEEDBACKS',
         payload: {feedbacksList, numberOfConnectedStudents}
       })
     }

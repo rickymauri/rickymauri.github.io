@@ -44,7 +44,7 @@ export const StudentTitle = styled.h2`
     color: #000080;    
 `;
 
-export const QuestionsList = styled.div`
+export const QuestionsList  = styled.div`
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -64,23 +64,15 @@ export const QuestionsList = styled.div`
 export const QuestionContainer = styled.div`
     display: flex;
     justify-content:end;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     padding: 3px;
 `;
 
-export const QuestionText = styled.div`
-    margin-right: 3px;
-    margin-top: -23px;
-    margin-bottom: -20px;
-`;
-
-export const TimeView = styled.h5`
-    text-align: right;
-    padding-right: 10px;
-    font-size: 10px;
-    font-weight: bold;
-    color: grey;   
-    opacity: 0.9; 
+export const LikeText = styled.div`
+   margin-top: 11px;
+   font-weight: bold;
+   font-size: 14px;
 `;
 
 export const NoQuestion = styled.h3`
@@ -88,4 +80,22 @@ export const NoQuestion = styled.h3`
     text-align: center;
     font-weight: bold;
     color: rgb(255, 0, 0);
+`;
+
+export const LikeContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+`;
+
+export const DeleteButton = styled.div`
+    margin-top: max-content;
+    margin-right: 4px;
+`;
+
+export const QuestionText = styled.div`
+    padding-right: 40px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
 `;

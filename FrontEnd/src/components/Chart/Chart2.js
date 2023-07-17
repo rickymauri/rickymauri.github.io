@@ -1,7 +1,7 @@
-import React, {useContext} from "react";
+import React from "react";
 import ChartBar from "./ChartBar";
 import { ChartContainer, ResultsContainer, ResultsTitle } from "../../styles/Results.styles";
-import { SocketContext } from "../../context/SocketContext";
+
 
 const Chart2 = (props) => {
     

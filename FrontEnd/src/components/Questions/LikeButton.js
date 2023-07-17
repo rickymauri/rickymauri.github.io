@@ -1,23 +1,22 @@
 import React, {useContext} from "react";
 import { SocketContext } from "../../context/SocketContext";
 
-const LikeButton = (id) => {
+const LikeButton = (props) => {
 
     const {emit,formId, questionsLiked, isClosed,studentId} = useContext(SocketContext);
+    const {id} = props;
     
     const likeHandler = (event) => {
      
         event.preventDefault();
       
         const body = {
-            questionId: id.id,
+            questionId: id,
             formId: formId
         };
 
-        if(!studentId) {
-            alert("You cannot like a question as a teacher.");
-        }
-        else if(body && questionsLiked.indexOf(body.questionId) === -1 && !isClosed) {
+     
+        if(body && questionsLiked.indexOf(body.questionId) === -1 && !isClosed) {
             questionsLiked.push(body.questionId);
             emit('student:likedQuestion',{body});
         }
@@ -28,7 +27,7 @@ const LikeButton = (id) => {
     }
 
     return (    
-        <button onClick={likeHandler} className="btn-like" id={id.id}>&#x2764;&#xFE0F;</button>
+        <button onClick={likeHandler} className={`btn-like ${(!studentId) ? 'invalid' : ''}`} id={id.id} disabled={`${(!studentId) ? 'true' : ''}`}><span role="img" aria-label="love">&#x2764;&#xFE0F;</span></button>
     );
 };
 

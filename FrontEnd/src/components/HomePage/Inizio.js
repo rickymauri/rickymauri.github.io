@@ -14,11 +14,11 @@ const Inizio = (props) => {
             </StartTitle>
             <div>
                 <Link to="/professor/form">
-                    <Button type="submit" onClick={props.onClick}>PROFESSOR
+                    <Button type="submit" onClick={props.onClick}>CREATE FORM
                     </Button>
                 </Link>
                 <Link to="/student">
-                    <Button type="submit" onClick={props.onClick}>STUDENT
+                    <Button type="submit" onClick={props.onClick}>JOIN FORM
                     </Button>
                 </Link>
             </div>

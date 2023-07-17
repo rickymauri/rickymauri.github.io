@@ -5,7 +5,6 @@ import { FeedbackTitle } from "../styles/Results.styles";
 import QuestionForm from "../components/Questions/QuestionForm";
 import StudentsList from "../components/HomePageStudent/StudentsList";
 import ExitFormButton from "../components/FormPageStudent/ExitFormButton";
-import ResultsViewButton from "../components/FormPageStudent/ResultsViewButton";
 
 const FeedbacksStudent = () => {
  
@@ -19,7 +18,6 @@ const FeedbacksStudent = () => {
       <FeedbacksChart/>
       </div> 
       <br></br>
-      <ResultsViewButton />
         <QuestionForm />
         <QuestionsList/> 
         <br></br>

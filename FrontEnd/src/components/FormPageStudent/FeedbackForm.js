@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 import { FormContainer } from "../../styles/CompileForm.styles";
 import { SocketContext } from "../../context/SocketContext";
 

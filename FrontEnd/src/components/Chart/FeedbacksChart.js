@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import { SocketContext } from "../../context/SocketContext";
 import {ResultsList} from "../../styles/Results.styles";
 import Chart1 from "./Chart1";

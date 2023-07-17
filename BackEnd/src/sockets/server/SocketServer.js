@@ -58,11 +58,11 @@ module.exports = (expressServer) => {
       socket.join(roomName);
       socket.data = {formId: formId}; // store formId for the disconnect event
 
+      const isClosed = await formServices.isFormClosed(formId);
       if (isTeacherLogin) {
-        socket.emit('teacher:feedbackResultsPage', formId, formCode);
+        socket.emit('teacher:feedbackResultsPage', formId, formCode, isClosed);
       }
       else {
-        const isClosed = await formServices.isFormClosed(formId);
         socket.emit('student:submitFeedbackPage', studentId, formId, isClosed);
       } 
     }   

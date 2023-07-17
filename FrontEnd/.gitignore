@@ -1,6 +1,0 @@
-node_modules/
-package.json
-package-lock.json
-BackEnd/logs/
-BackEnd/node_modules/
-BackEnd/src/testing/

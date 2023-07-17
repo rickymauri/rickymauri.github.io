@@ -1,7 +1,0 @@
-2023-07-10T15:44:28.021Z - [INFO] - [SOCKET] New connection for socket: WY60BepWvRYBK12YAAAB
-2023-07-10T15:44:28.272Z - [ERROR] - [500] - undefined
-2023-07-10T15:44:28.273Z - [ERROR] - Unknown column 'isClosed' in 'field list'
-2023-07-10T15:44:37.716Z - [INFO] - [SOCKET] New connection for socket: oZ3icQ2OOe2qxEoWAAAD
-2023-07-10T15:44:37.754Z - [ERROR] - [500] - undefined
-2023-07-10T15:44:37.755Z - [ERROR] - Unknown column 'isClosed' in 'field list'
-2023-07-10T15:45:17.796Z - [INFO] - [SOCKET] Disconnected socket: WY60BepWvRYBK12YAAAB

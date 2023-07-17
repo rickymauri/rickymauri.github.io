@@ -6,6 +6,10 @@ import { SocketContext } from "../../context/SocketContext";
 const QuestionsList = () => {
 
     const {questions} = useContext(SocketContext);
+   
+    questions.sort((a, b) => {
+        return b.numberOfLikes - a.numberOfLikes;
+    });
     
     if(questions.length === 0) {
         return (
@@ -14,7 +18,7 @@ const QuestionsList = () => {
             </NoQuestion>
         )
     }
-
+    
     return(
 
         <ul>

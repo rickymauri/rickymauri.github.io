@@ -12,7 +12,7 @@ const FormStudent = () => {
   
   useEffect(() => {
     if(isClosed) {
-      alert("Form is closed. You can't answer anymore. Check the results.");
+      alert("The form is closed. You can't answer anymore. Check the results.");
     }
   }, [isClosed]);
 

@@ -1,24 +1,37 @@
 import React from "react";
-import {TimeView, QuestionsList, QuestionContainer, QuestionText}   from "../../styles/CompileForm.styles";
+import {DeleteButton, LikeContainer, LikeText, QuestionContainer, QuestionText}   from "../../styles/CompileForm.styles";
 import LikeButton from "./LikeButton";
+import DeleteQuestionButton from "./DeleteQuestionButton";
 
-const QuestionItem = (question) => {
+const QuestionItem = (props) => {
+
+    const {id, text, numberOfLikes} = props;
+    const [isDeleted, setIsDeleted] = React.useState(false);
 
     return(
-        <QuestionsList>
-            <h3>
-                {question.text}
-            </h3>
+        <div className={`questions-list ${isDeleted ? 'invalid' : ''}`}>
+            <QuestionText>
+                {text}
+            </QuestionText>
             <QuestionContainer>
-                <QuestionText>
-                    <h3>{question.numberOfLikes}</h3>
-                </QuestionText>
-                <LikeButton id={question.id}/>
+                <DeleteButton>
+                    <DeleteQuestionButton
+                        isDeleted={isDeleted}
+                        onDeleteQuestion= {setIsDeleted}
+                    />
+                </DeleteButton>
+                <LikeContainer>
+                    <LikeText>
+                        {numberOfLikes}
+                    </LikeText>
+                    <div>
+                        <LikeButton 
+                            id={id}
+                        />
+                    </div>
+                </LikeContainer>
             </QuestionContainer>
-            <TimeView>
-                {question.time}
-            </TimeView>
-        </QuestionsList>
+        </div>
     );
 };
 

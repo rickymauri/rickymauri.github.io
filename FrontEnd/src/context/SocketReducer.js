@@ -1,5 +1,3 @@
-import io from 'socket.io-client';
-
 export default (state, action) => {
   switch (action.type) {
     case 'INIT_SOCKET':
@@ -17,6 +15,7 @@ export default (state, action) => {
         ...state,
         formId: action.payload.formId,
         formCode: action.payload.formCode,
+        isClosed: action.payload.isClosed,
       };
     case 'ADD_STUDENT_ID_AND_FORM_ID':
       return {
@@ -25,18 +24,12 @@ export default (state, action) => {
         formId: action.payload.formId,
         isClosed: action.payload.isClosed,
       }
-    case 'ADD_STUDENT_FEEDBACKS':
-      return {
-        ...state,
-        feedbacksList: action.payload.feedbacksList,
-        numberOfConnectedStudents: action.payload.numberOfConnectedStudents,
-      }
-    case 'ADD_TEACHER_FEEDBACKS':
-      return {
-        ...state,
-        feedbacksList: action.payload.feedbacksList,
-        numberOfConnectedStudents: action.payload.numberOfConnectedStudents,
-      }
+    case 'ADD_FEEDBACKS':
+     return {
+      ...state,
+      feedbacksList: action.payload.feedbacksList,
+      numberOfConnectedStudents: action.payload.numberOfConnectedStudents,
+     } 
     case 'ADD_QUESTION':
       return {
         ...state,
@@ -49,7 +42,6 @@ export default (state, action) => {
           questions: [...state.questions, action.payload.question],
         };
       } else {
-        console.log(state.questions);
           return {
             ...state,
             questions: state.questions.map((question) => {

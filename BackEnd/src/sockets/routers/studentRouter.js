@@ -37,7 +37,12 @@ module.exports = (io) => {
                     formId
                 );
                 logger.info(`[SOCKET] Feedback submitted by socket ${socket.id}`);
-                socket.emit("student:feedbackSubmitted");
+                const feedbacks = await formServices.getFormResults(formId);
+                const numberOfConnectedStudents = await SocketUtils.getNumberOfConnectedStudents(formId);
+                const connectedSockets = await SocketUtils.getConnectedSockets(formId);
+                connectedSockets.forEach((s) => {
+                    s.emit("all:feedbackResults", feedbacks, numberOfConnectedStudents); //Send the event to all sockets in the room
+                });
             }
             catch (err) {
                 next(err);
@@ -57,8 +62,8 @@ module.exports = (io) => {
             try {
                 const {questionText, formId} = args[1].body;
                 const newQuestion = await questionServices.createQuestion(questionText, formId);
-                const question = await questionServices.getQuestionMainFields(newQuestion.id);
                 logger.info(`[SOCKET] Question submitted by socket ${socket.id}`);
+                const question = await questionServices.getQuestionMainFields(newQuestion.id);
                 const connectedSockets = await SocketUtils.getConnectedSockets(formId);
                 connectedSockets.forEach((s) => {
                     s.emit("all:questionUpdate", question); //Send the event to all sockets in the room
@@ -88,27 +93,6 @@ module.exports = (io) => {
                 connectedSockets.forEach((s) => {
                     s.emit("all:questionUpdate", question); //Send the event to all sockets in the room
                 });
-            }
-            catch (err) {
-                next(err);
-            }
-        }
-    );
-
-    router.on(
-        "student:feedbackResults",
-        celebrateSocket({
-            body: {
-                formId: numberCelebrateSchema
-            },
-        }),
-        async (socket, args, next) => {
-            try {
-                const formId = args[1].body.formId;
-                const feedbacks = await formServices.getFormResults(formId);
-                logger.info(`[SOCKET] Feedbacks retrieved`);
-                const numberOfConnectedStudents = await SocketUtils.getNumberOfConnectedStudents(formId);
-                socket.emit("student:feedbackResultsList", feedbacks, numberOfConnectedStudents);
             }
             catch (err) {
                 next(err);

@@ -7,7 +7,7 @@ import { SocketContext } from "../../context/SocketContext";
 const NewAccess = () => {
 
     const navigate = useNavigate();
-    let {studentId,formId,initSocket,socket} = useContext(SocketContext);
+    let {studentId,formId,initSocket} = useContext(SocketContext);
     const [enteredUsername, setEnteredUsername] = useState('');
     const [enteredCode, setEnteredCode] = useState('');
     const [isValid1, setIsValid1] = useState(true);
