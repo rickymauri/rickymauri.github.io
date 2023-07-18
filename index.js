@@ -11,9 +11,9 @@ app.onReady().then(() => {
 // Button click handler to set share URL
 function handleSetShare() {
     // Replace this with the URL of your shared page
-    var url = ""
+    var url = "https://www.example.com/shared.html"
     // "Shared App" is the title of the window or tab that will be created
-    app.setShareUrl(url, "abcdef", "Evoli for Webex").then(() => {
+    app.setShareUrl(url, "", "Shared App").then(() => {
         log("Set share URL", url);
     }).catch((errorcode) => {
         log("Error: ", Webex.Application.ErrorCodes[errorcode])
