@@ -1,0 +1,27 @@
+2023-07-17T14:58:00.530Z - [INFO] - [SOCKET] New connection for socket: Le9HxSPRAPx8R3hPAAAB
+2023-07-17T14:58:00.629Z - [INFO] - [FORM] Created form: 1 with title: Onde gravitazionali
+2023-07-17T14:58:00.630Z - [INFO] - [ROOM] Created Room:1
+2023-07-17T14:58:12.533Z - [INFO] - [SOCKET] Disconnected socket: Le9HxSPRAPx8R3hPAAAB
+2023-07-17T14:58:12.554Z - [INFO] - [ROOM] Deleted empty Room:1
+2023-07-17T14:59:50.363Z - [INFO] - [SOCKET] New connection for socket: ZI-6o1bxayN9XaCGAAAD
+2023-07-17T14:59:50.522Z - [INFO] - [FORM] Created form: 2 with title: Servizio Sociale
+2023-07-17T14:59:50.524Z - [INFO] - [ROOM] Created Room:2
+2023-07-17T15:00:06.376Z - [INFO] - [SOCKET] New connection for socket: 4eIpLNRWuWDBEMYlAAAF
+2023-07-17T15:00:21.439Z - [INFO] - [SOCKET] Feedback submitted by socket 4eIpLNRWuWDBEMYlAAAF
+2023-07-17T15:00:36.706Z - [INFO] - [SOCKET] Question submitted by socket 4eIpLNRWuWDBEMYlAAAF
+2023-07-17T15:00:50.770Z - [INFO] - [SOCKET] Question liked by socket 4eIpLNRWuWDBEMYlAAAF
+2023-07-17T15:01:09.007Z - [INFO] - [SOCKET] New connection for socket: 0RAtEqZlKc2XvG3tAAAH
+2023-07-17T15:01:19.235Z - [INFO] - [SOCKET] Feedback submitted by socket 0RAtEqZlKc2XvG3tAAAH
+2023-07-17T15:01:27.495Z - [INFO] - [SOCKET] Disconnected socket: ZI-6o1bxayN9XaCGAAAD
+2023-07-17T15:01:30.627Z - [INFO] - [SOCKET] Disconnected socket: 4eIpLNRWuWDBEMYlAAAF
+2023-07-17T15:01:39.729Z - [INFO] - [SOCKET] Disconnected socket: 0RAtEqZlKc2XvG3tAAAH
+2023-07-17T15:01:39.735Z - [INFO] - [ROOM] Deleted empty Room:2
+2023-07-17T21:41:16.556Z - [INFO] - [SOCKET] New connection for socket: 4VjicfazmtjgEHEXAAAB
+2023-07-17T21:41:16.689Z - [INFO] - [FORM] Created form: 3 with title: ccc
+2023-07-17T21:41:16.690Z - [INFO] - [ROOM] Created Room:3
+2023-07-17T21:41:31.048Z - [INFO] - [SOCKET] New connection for socket: 8BUlT5lzJdBDVzCUAAAD
+2023-07-17T21:41:43.744Z - [INFO] - [SOCKET] Feedback submitted by socket 8BUlT5lzJdBDVzCUAAAD
+2023-07-17T21:41:46.894Z - [INFO] - [SOCKET] Question submitted by socket 8BUlT5lzJdBDVzCUAAAD
+2023-07-17T21:41:52.835Z - [INFO] - [SOCKET] Disconnected socket: 4VjicfazmtjgEHEXAAAB
+2023-07-17T21:41:53.347Z - [INFO] - [SOCKET] Disconnected socket: 8BUlT5lzJdBDVzCUAAAD
+2023-07-17T21:41:53.351Z - [INFO] - [ROOM] Deleted empty Room:3
